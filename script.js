@@ -1,5 +1,5 @@
   /* 1. Escreva um programa em que o usuário informe dois números utilizando o "prompt".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Então escreva em tela o maior deles. */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Então escreva em tela o maior deles. */
 
   function exercicio1() {
       var numbera = parseInt(prompt("1/2 - Digite um número abaixo:"));
@@ -554,6 +554,156 @@
           } else {
               let div18 = document.querySelector("#ex18");
               div18.innerText = ("Sua altura é " + alturam + " e seu peso ideal médio é " + pesom + "kg.")
+          }
+      }
+  }
+
+  /* 19 - Escreva um programa para ler o número de gols marcados pelo Grêmio e o número
+  de gols marcados pelo Inter em um GRENAL. Escrever o nome do vencedor. Caso não haja
+  vencedor deverá ser impressa a palavra EMPATE. */
+
+  function exercicio19() {
+      var gremio = parseInt(prompt("⚽| Digite o número de gols marcados pelo Grêmio:"));
+      var inter = parseInt(prompt("⚽| Digite o número de gols marcados pelo Inter:"));
+
+      if (gremio > inter) {
+          let div19 = document.querySelector("#ex19");
+          div19.innerText = ("Grêmio é o vencedor!!! 🎉🎉🎉")
+      } else {
+          if (inter > gremio) {
+              let div19 = document.querySelector("#ex19");
+              div19.innerText = ("Inter é o vencedor!!! 🎉🎉🎉")
+          } else {
+              let div19 = document.querySelector("#ex19");
+              div19.innerText = ("O jogo terminou em EMPATE!")
+          }
+      }
+
+  }
+
+  /* 20 - Escreva um programa para ler o número de lados de um polígono regular e a medida do lado (em cm).
+  Calcular e imprimir o seguinte: 
+  Se o número de lados for igual a 3 escrever TRIÂNGULO e o valor do seu perímetro. 
+  Se o número de lados for igual a 4 escrever QUADRADO e o valor da sua área. 
+  Se o número de lados for igual a 5 escrever PENTÁGONO. 
+
+  Observação: Considere que o usuário só informará os valores 3, 4 ou 5. 
+
+  Caso o número de lados seja inferior a 3 escrever NÃO É UM POLÍGONO. 
+  Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO. */
+
+  function exercicio20() {
+      var lados = parseInt(prompt("Digite o número de lados:"));
+
+      if (lados == 3) {
+          var medidaLados = parseInt(prompt("Digite a medida do lado (CM):"));
+          let div20 = document.querySelector("#ex20");
+          div20.innerText = ("TRIÂNGULO. E o valor de seu perímetro é de " + (medidaLados * lados));
+      }
+
+      if (lados == 4) {
+          var medidaLados = parseInt(prompt("Digite a medida do lado (CM):"));
+          let div20 = document.querySelector("#ex20");
+          div20.innerText = ("QUADRADO. E o valor de sua área é de " + (medidaLados * medidaLados));
+      }
+
+      if (lados == 5) {
+          var medidaLados = parseInt(prompt("Digite a medida do lado (CM):"));
+          let div20 = document.querySelector("#ex20");
+          div20.innerText = ("PENTÁGONO. E o valor de seu perímetro é de " + (medidaLados * lados));
+      }
+
+      if (lados > 5) {
+          let div20 = document.querySelector("#ex20");
+          div20.innerText = ("POLÍGONO NÃO IDENTIFICADO!");
+      }
+
+      if (lados < 3) {
+          let div20 = document.querySelector("#ex20");
+          div20.innerText = ("NÃO É UM POLÍGONO!");
+      }
+
+
+  }
+
+  /* 21 - Escreva um programa que leia as notas das duas avaliações normais
+  e a nota da avaliação optativa. Calcular a média do semestre considerando
+  que a prova optativa substitui a nota mais baixa entre as duas primeiras avaliações.
+  Escrever a média e mensagens que indiquem se o aluno foi aprovado, reprovado ou está
+  em exame, de acordo com as informações abaixo: */
+
+  function exercicio21() {
+
+
+      var av1 = parseInt(prompt("Digite sua nota da primeira avaliação:"));
+      var av2 = parseInt(prompt("Digite sua nota da segunda avaliação:"));
+      var qst = prompt("Você realizou a avaliação optativa? (N/S) ou apenas deixe em branco:");
+
+      var mediaNormal = (av1 + av2) / 2;
+
+      if (qst == "n") {
+
+          if (mediaNormal >= 6) {
+              let div21 = document.querySelector("#ex21");
+              div21.innerText = ("Sua média é " + mediaNormal + " e você foi APROVADO! 🥳🥳🥳")
+          }
+
+
+
+          if (mediaNormal < 3) {
+              let div21 = document.querySelector("#ex21");
+              div21.innerText = ("Sua média é " + mediaNormal + " e você foi REPROVADO. ☹️")
+          }
+
+
+
+          if (mediaNormal >= 3 && mediaNormal < 6) {
+              let div21 = document.querySelector("#ex21");
+              div21.innerText = ("Sua média é " + mediaNormal + " e você está em EXAME. 😀")
+          }
+
+      } else {
+
+          var av4 = parseInt(prompt("Digite sua nota da avaliação optativa:"));
+
+          if (av1 > av2) {
+              var mediaOptativa = (av1 + av4) / 2;
+
+              if (mediaOptativa >= 6) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa + " e você foi APROVADO! 🥳🥳🥳")
+              }
+
+              if (mediaOptativa < 3) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa + " e você foi REPROVADO. ☹️")
+              }
+
+              if (mediaOptativa >= 3 && mediaOptativa < 6) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa + " e você está em EXAME. 😀")
+              }
+          }
+
+
+
+          if (av2 > av1) {
+              var mediaOptativa2 = (av2 + av4) / 2;
+
+              if (mediaOptativa2 >= 6) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa2 + " e você foi APROVADO! 🥳🥳🥳")
+              }
+
+              if (mediaOptativa2 < 3) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa2 + " e você foi REPROVADO. ☹️")
+              }
+
+              if (mediaOptativa2 >= 3 && mediaOptativa < 6) {
+                  let div21 = document.querySelector("#ex21");
+                  div21.innerText = ("Sua média é " + mediaOptativa2 + " e você está em EXAME. 😀")
+              }
           }
       }
   }
