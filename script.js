@@ -1,5 +1,5 @@
   /* 1. Escreva um programa em que o usuário informe dois números utilizando o "prompt".
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Então escreva em tela o maior deles. */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Então escreva em tela o maior deles. */
 
   function exercicio1() {
       var numbera = parseInt(prompt("1/2 - Digite um número abaixo:"));
@@ -705,5 +705,132 @@
                   div21.innerText = ("Sua média é " + mediaOptativa2 + " e você está em EXAME. 😀")
               }
           }
+      }
+  }
+
+  /* 22. A Loja Remi du Fromage está com uma promoção onde cada capacete artesanal para tartaruga
+  custa R$18.230 e pode ser pago em até 15 vezes sem juros. Crie um programa onde o usuário possa
+  informar o valor parcelas que deseja pagar e exiba o valor de cada parcela. */
+
+  function exercicio22() {
+      var capacete = 18230;
+      var numParcelas = parseInt(prompt("Digite o número de parcelas que deseja pagar:"));
+      var valorParcelas = parseFloat(capacete / numParcelas).toFixed(2)
+
+      let div22 = document.querySelector("#ex22");
+      div22.innerText = ("Você escolheu pagar em " + numParcelas + " vezes. E o valor de cada parcela ficou R$" + valorParcelas)
+
+  }
+
+  /* 23 - Faça um programa em que o usuário informe 20 valores e no final, escreva o maior e o menor valor lido. */
+
+  function exercicio23() {
+
+      var maior = 1000;
+      var menor = -1000;
+      var checkMaior = 0;
+      var checkMenor = 0;
+
+
+      for (let contadorLoop = 1; contadorLoop < 21; contadorLoop++) {
+          var num = parseInt(prompt(contadorLoop + "/20 - Digite um numero:"));
+
+          var counta = num;
+
+          if (counta > checkMaior) {
+              checkMaior = num;
+              maior = checkMaior;
+          } else {
+              if (checkMaior == 0) {
+                  checkMaior = num;
+              }
+          }
+
+          var countb = num;
+
+          if (countb < checkMenor) {
+              checkMenor = num;
+              menor = checkMenor;
+          } else {
+              if (checkMenor == 0) {
+                  checkMenor = num;
+                  menor = checkMenor;
+              }
+          }
+      }
+
+      let div23 = document.querySelector("#ex23");
+      div23.innerText = ("O maior é " + maior + ". E o menor é " + menor) + ".";
+
+
+  }
+
+  /* 24 - Um zoológico muito louco
+  Escreva um programa que leia a idade de 2 javalis e 2 girafas (considere que a idade
+      dos javalis será sempre diferente, assim como das girafas ). Calcule e escreva a
+      soma das idades do javali mais velho com a girafa mais nova, e o produto das idades
+      do javali mais novo com a girafa mais velha. */
+
+  function exercicio24() {
+      var javaliUm = parseInt(prompt("1/4 - Digite a idade do primeiro Javali:"));
+      var javaliDois = parseInt(prompt("2/4 - Digite uma idade diferente para o segundo Javali:"));
+      var girafaUm = parseInt(prompt("3/4 - Digite a idade da primeira Girafa:"));
+      var girafaDois = parseInt(prompt("4/4 - Digite uma idade diferente para a segunda Girafa:"));
+
+      if (javaliUm > javaliDois) {
+          var javaliOld = javaliUm;
+          var javaliNew = javaliDois;
+      } else {
+          var javaliOld = javaliDois;
+          var javaliNew = javaliUm;
+      }
+
+      if (girafaUm > girafaDois) {
+          var girafaOld = girafaUm;
+          var girafaNew = girafaDois;
+      } else {
+          var girafaOld = girafaDois;
+          var girafaNew = girafaUm;
+      }
+
+      let div24 = document.querySelector("#ex24");
+      div24.innerText = ("A soma das idades do Javali mais velho com a Girafa mais nova é " + (javaliOld + girafaNew) + ". E o produto das idades do Javali mais novo com a Girafa mais velha é " + (javaliNew * girafaOld) + ".");
+  }
+
+  /* 25 - Uma micro calculadora
+  Escreva um programa para ler 2 valores inteiros informados pelo usuário e uma das
+  seguintes operações a serem
+  executadas (codificada da seguinte forma: 1.Adição, 2.Subtração, 3.Divisão,
+      4.Multiplicação).
+  O programa deve calcular e escrever o resultado dessa operação sobre os dois
+  valores lidos. Observação: Considere
+  que só serão lidos os valores 1, 2, 3 ou 4 para as operações */
+
+  function exercicio25() {
+
+      var valora = parseInt(prompt("1/2 - Digite um valor qualquer:"));
+      var valorb = parseInt(prompt("2/2 - Digite mais um valor qualquer:"));
+
+
+      var operacao = parseInt(prompt("Escolha uma operação: 1 para soma; 2 para subtração; 3 para divisão; e 4 para multiplicação."));
+
+      if (operacao == 1) {
+          let div25 = document.querySelector("#ex25");
+          div25.innerText = ("Resultado da soma: " + (valora + valorb));
+      }
+
+      if (operacao == 2) {
+          let div25 = document.querySelector("#ex25");
+          div25.innerText = ("Resultado da subtração: " + (valora - valorb));
+      }
+
+      if (operacao == 3) {
+          let div25 = document.querySelector("#ex25");
+          div25.innerText = ("Resultado da divisão: " + (valora / valorb));
+      }
+
+      if (operacao == 4) {
+          let div25 = document.querySelector("#ex25");
+          div25.innerText = ("Resultado da multiplicação: " + (valora * valorb));
       }
   }
